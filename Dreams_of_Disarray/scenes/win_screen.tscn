@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbpq5dndg6o7o"]
+
+[ext_resource type="FontFile" uid="uid://bfpfj5yaylcg4" path="res://assets/assets/fonts/new/HelpMe.woff2" id="1_7gc7d"]
+[ext_resource type="Script" path="res://scripts/win_screen.gd" id="1_b4eff"]
+[ext_resource type="FontFile" uid="uid://bf0y0v6x4wdjs" path="res://assets/assets/fonts/Kenney Pixel Square.ttf" id="2_400ux"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0onmh"]
+font = ExtResource("1_7gc7d")
+font_size = 17
+outline_size = 1
+outline_color = Color(1, 0, 0, 1)
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -186.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b4eff")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = -130.0
+offset_right = 52.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.54, 0.54, 0.0901961)
+
+[node name="Win" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -175.5
+offset_right = 131.0
+offset_bottom = -124.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Onto the next 
+CYCLE of life"
+label_settings = SubResource("LabelSettings_0onmh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.637
+anchor_right = 0.5
+anchor_bottom = 0.637
+offset_left = -62.0
+offset_top = -111.475
+offset_right = 100.0
+offset_bottom = -79.475
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_400ux")
+text = "REBORN"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bg50u612amfam"
+path="res://.godot/imported/8BIT06 - GP Ensemble - 4 4 - F minor - 85BPM.mp3-61101b797782e606207e3561d30ed9d3.mp3str"
+
+[deps]
+
+source_file="res://assets/music/8BIT06 - GP Ensemble - 4 4 - F minor - 85BPM.mp3"
+dest_files=["res://.godot/imported/8BIT06 - GP Ensemble - 4 4 - F minor - 85BPM.mp3-61101b797782e606207e3561d30ed9d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

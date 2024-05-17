@@ -1,0 +1,93 @@
+[gd_scene load_steps=20 format=3 uid="uid://dp4flfuilyj4s"]
+
+[ext_resource type="Script" path="res://scripts/exit.gd" id="1_2cmlh"]
+[ext_resource type="Texture2D" uid="uid://c43aj01agkc87" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_1.png" id="2_sh1ug"]
+[ext_resource type="Texture2D" uid="uid://0kk8w02vageh" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_2.png" id="3_aqx2s"]
+[ext_resource type="Texture2D" uid="uid://b55vnxq4blndo" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_3.png" id="4_he4wp"]
+[ext_resource type="Texture2D" uid="uid://d4dms3o8j7xjn" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_4.png" id="5_nincy"]
+[ext_resource type="Texture2D" uid="uid://bnbucv5yjnf1e" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_5.png" id="6_osu5t"]
+[ext_resource type="Texture2D" uid="uid://bq80mu6mjgmnp" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_6.png" id="7_ytfce"]
+[ext_resource type="Texture2D" uid="uid://drssgwugrr8cu" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_7.png" id="8_iljvp"]
+[ext_resource type="Texture2D" uid="uid://brpggyywxoh3y" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_8.png" id="9_mxgf0"]
+[ext_resource type="Texture2D" uid="uid://cvaaqm5guvd0o" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_9.png" id="10_frpok"]
+[ext_resource type="Texture2D" uid="uid://c2bo5ewhfdeij" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_10.png" id="11_7lcb3"]
+[ext_resource type="Texture2D" uid="uid://cwsycjph7ilqq" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_11.png" id="12_q6q2i"]
+[ext_resource type="Texture2D" uid="uid://b1w5lcwdbscl3" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_12.png" id="13_ixfes"]
+[ext_resource type="Texture2D" uid="uid://bxktuqqn8w0uf" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_13.png" id="14_r2chs"]
+[ext_resource type="Texture2D" uid="uid://cjf23jtptiof7" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_14.png" id="15_i5bh1"]
+[ext_resource type="Texture2D" uid="uid://cqneujsx2upq6" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_15.png" id="16_n1avb"]
+[ext_resource type="Texture2D" uid="uid://c1ujamfvg2sk6" path="res://assets/assets/others/exitareasprite/Spell/Bringer-of-Death_Spell_16.png" id="17_by07v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nl5ta"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sh1ug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aqx2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_he4wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nincy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_osu5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ytfce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_iljvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mxgf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_frpok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7lcb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_q6q2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ixfes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_r2chs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_i5bh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_n1avb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_by07v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q5nf2"]
+radius = 24.7588
+
+[node name="Exit" type="Area2D"]
+position = Vector2(83, 76)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_2cmlh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_nl5ta")
+frame_progress = 0.678711
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_q5nf2")

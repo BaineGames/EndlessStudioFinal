@@ -1,0 +1,138 @@
+[gd_scene load_steps=15 format=3 uid="uid://hm5ew45ncum3"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_106ti"]
+[ext_resource type="PackedScene" uid="uid://q3yer535jpvl" path="res://scenes/player.tscn" id="1_euq11"]
+[ext_resource type="PackedScene" uid="uid://y03bwrrvmhmf" path="res://scenes/level_3.tscn" id="2_7073v"]
+[ext_resource type="PackedScene" uid="uid://bj6pwusaaqf3b" path="res://scenes/bg.tscn" id="2_ywk3g"]
+[ext_resource type="PackedScene" uid="uid://ceh0khs7sisi3" path="res://scenes/tile_map.tscn" id="3_0j02i"]
+[ext_resource type="PackedScene" uid="uid://bcuetefrg30bb" path="res://scenes/start.tscn" id="4_esf6s"]
+[ext_resource type="Texture2D" uid="uid://bljrol57xcq51" path="res://assets/assets/textures/bg/Green.png" id="4_y5hij"]
+[ext_resource type="PackedScene" uid="uid://dp4flfuilyj4s" path="res://scenes/exit.tscn" id="5_ouvsh"]
+[ext_resource type="PackedScene" uid="uid://f4jluo8vha1k" path="res://scenes/ui_layer.tscn" id="5_t4kwj"]
+[ext_resource type="PackedScene" uid="uid://mx5kogy03r7a" path="res://scenes/deathzone.tscn" id="6_ykmo5"]
+[ext_resource type="PackedScene" uid="uid://c4djrmuhrwcp6" path="res://scenes/jump_pad.tscn" id="11_1r67i"]
+[ext_resource type="FontFile" uid="uid://yx342n6mjhua" path="res://assets/assets/fonts/HelpMe.otf" id="12_mtt3s"]
+[ext_resource type="PackedScene" uid="uid://fe0etmn2qakt" path="res://scenes/spike_ball.tscn" id="12_o3j3m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t7iq4"]
+font = ExtResource("12_mtt3s")
+font_size = 12
+font_color = Color(1, 0.23, 0.319833, 1)
+
+[node name="Level_2" type="Node2D"]
+script = ExtResource("1_106ti")
+next_level = ExtResource("2_7073v")
+level_time = 60
+
+[node name="BG" parent="." instance=ExtResource("2_ywk3g")]
+scroll_offset = Vector2(429.016, 597.75)
+bg_texture = ExtResource("4_y5hij")
+
+[node name="UILayer" parent="." instance=ExtResource("5_t4kwj")]
+
+[node name="TileMap" parent="." instance=ExtResource("3_0j02i")]
+layer_0/tile_data = PackedInt32Array(65532, 0, 4, 65533, 65536, 4, 65534, 131072, 4, 65535, 0, 4, 0, 65536, 4, 1, 131072, 4, 2, 0, 4, 3, 65536, 4, 4, 131072, 4, 5, 0, 4, 6, 65536, 4, 7, 131072, 4, 8, 0, 4, 9, 65536, 4, 10, 131072, 4, 11, 0, 4, 12, 65536, 4, 13, 131072, 4, 14, 0, 4, 15, 65536, 4, 16, 131072, 4, 131068, 0, 6, 131069, 65536, 6, 131070, 131072, 6, 131071, 0, 6, 65536, 65536, 6, 65537, 131072, 6, 65538, 0, 6, 65539, 65536, 6, 65540, 131072, 6, 65541, 0, 6, 65542, 65536, 6, 65543, 131072, 6, 65544, 0, 6, 65545, 65536, 6, 65546, 131072, 6, 65547, 0, 6, 65548, 65536, 6, 65549, 131072, 6, 65550, 0, 6, 65551, 65536, 6, 65552, 131072, 6, -131076, 0, 4, -65540, 0, 5, -4, 0, 6, -131075, 131072, 4, -65539, 131072, 5, -3, 131072, 6, -327684, 0, 4, -262148, 0, 5, -196612, 0, 6, -327683, 131072, 4, -262147, 131072, 5, -196611, 131072, 6, -327658, 1114112, 1, -327657, 1179648, 1, -327656, 1179648, 1, -327655, 1179648, 1, -327654, 1179648, 1, -327653, 1179648, 1, -327652, 1179648, 1, -327651, 1179648, 1, -327650, 1179648, 1, -327649, 1179648, 1, -524253, 1114112, 1, -524252, 1179648, 1, -524251, 1179648, 1, -524250, 1179648, 1, -524249, 1179648, 1, -524248, 1179648, 1, -524247, 1179648, 1, -524246, 1179648, 1, -524245, 1179648, 1, -720848, 1114112, 1, -720847, 1179648, 1, -720846, 1179648, 1, -720845, 1179648, 1, -720844, 1179648, 1, -720843, 1179648, 1, -327648, 1179648, 1, -327647, 1179648, 1, -327646, 1245184, 1, -524244, 1179648, 1, -524243, 1179648, 1, -524242, 1245184, 1, -720842, 1179648, 1, -720841, 1179648, 1, -720840, 1179648, 1, -720839, 1245184, 1, -917443, 1114112, 1, -917442, 1179648, 1, -917441, 1179648, 1, -917440, 1179648, 1, -917439, 1179648, 1, -917438, 1245184, 1, -1114041, 1114112, 1, -1114040, 1179648, 1, -1114039, 1179648, 1, -1114038, 1179648, 1, -1114037, 1245184, 1, -1376176, 65536, 6, -1376175, 65536, 6, -1376174, 65536, 6, -1376177, 0, 6, -1376173, 131072, 6, -1507245, 131072, 5, -1572781, 131072, 5, -1638317, 131072, 5, -1703853, 131072, 5, -1769389, 131072, 5, -1507244, 0, 4, -1441708, 0, 5, -1376172, 0, 6, -1507243, 65536, 4, -1441707, 65536, 5, -1376171, 65536, 6, -1507242, 131072, 4, -1441706, 131072, 5, -1376170, 131072, 6, -1703852, 0, 4, -1638316, 0, 5, -1572780, 0, 6, -1703851, 65536, 4, -1638315, 65536, 5, -1572779, 65536, 6, -1703850, 131072, 4, -1638314, 131072, 5, -1572778, 131072, 6, -1900460, 0, 4, -1834924, 0, 5, -1769388, 0, 6, -1900459, 65536, 4, -1834923, 65536, 5, -1769387, 65536, 6, -1900458, 131072, 4, -1834922, 131072, 5, -1769386, 131072, 6, -2097068, 0, 4, -2031532, 0, 5, -1965996, 0, 6, -2097067, 65536, 4, -2031531, 65536, 5, -1965995, 65536, 6, -2097066, 131072, 4, -2031530, 131072, 5, -1965994, 131072, 6, -1834925, 131072, 5, -1900461, 131072, 5, -1965997, 131072, 5, -2031533, 131072, 5, -2097069, 131072, 4, -1441713, 0, 5, -1441712, 65536, 6, -1441711, 65536, 6, -1441710, 65536, 6, -1441709, 131072, 5, -1507249, 262144, 4)
+
+[node name="Start" parent="." instance=ExtResource("4_esf6s")]
+
+[node name="Exit" parent="." instance=ExtResource("5_ouvsh")]
+position = Vector2(1308, -380)
+
+[node name="deathzone" parent="." instance=ExtResource("6_ykmo5")]
+
+[node name="Player" parent="." instance=ExtResource("1_euq11")]
+position = Vector2(-6, -132)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="JumpPad" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(266, -13)
+
+[node name="JumpPad2" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(384, -95)
+
+[node name="JumpPad3" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(455, -95)
+
+[node name="JumpPad4" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(528, -94)
+
+[node name="JumpPad5" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(585, -142)
+
+[node name="JumpPad6" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(655, -145)
+
+[node name="JumpPad7" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(733, -144)
+
+[node name="JumpPad8" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(790, -189)
+
+[node name="JumpPad9" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(908, -190)
+
+[node name="JumpPad10" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(992, -237)
+
+[node name="JumpPad11" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(1059, -238)
+
+[node name="JumpPad12" parent="Objects" instance=ExtResource("11_1r67i")]
+position = Vector2(1176, -285)
+jump_force = 600
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="SpikeBall" parent="Traps" instance=ExtResource("12_o3j3m")]
+position = Vector2(317, -63)
+
+[node name="SpikeBall2" parent="Traps" instance=ExtResource("12_o3j3m")]
+position = Vector2(847, -196)
+
+[node name="Labeling" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Labeling"]
+offset_left = 62.0
+offset_top = -104.0
+offset_right = 215.0
+offset_bottom = -71.0
+text = "Yay! I am a teen! 
+I can play freely now"
+label_settings = SubResource("LabelSettings_t7iq4")
+
+[node name="Label2" type="Label" parent="Labeling"]
+offset_left = 295.0
+offset_top = -140.0
+offset_right = 422.0
+offset_bottom = -125.0
+text = "wheeeeee!!!!!!"
+label_settings = SubResource("LabelSettings_t7iq4")
+
+[node name="Label3" type="Label" parent="Labeling"]
+offset_left = 527.0
+offset_top = -191.0
+offset_right = 692.0
+offset_bottom = -176.0
+text = "hope i don't get pulled over,
+cause i am fasttt!"
+label_settings = SubResource("LabelSettings_t7iq4")
+
+[node name="Label4" type="Label" parent="Labeling"]
+offset_left = 845.0
+offset_top = -346.0
+offset_right = 1149.0
+offset_bottom = -313.0
+text = "I hate being a teen. i want to be an adult.
+ i want to do what i want"
+label_settings = SubResource("LabelSettings_t7iq4")
+
+[node name="Label5" type="Label" parent="Labeling"]
+offset_left = 1220.0
+offset_top = -509.0
+offset_right = 1328.0
+offset_bottom = -458.0
+text = "Whoa! A  *new* 
+magic portal..
+i think"
+label_settings = SubResource("LabelSettings_t7iq4")

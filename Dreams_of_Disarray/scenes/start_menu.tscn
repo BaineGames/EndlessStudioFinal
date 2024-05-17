@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://050khnuek2ie"]
+
+[ext_resource type="PackedScene" uid="uid://bj6pwusaaqf3b" path="res://scenes/bg.tscn" id="1_npew6"]
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_sc46w"]
+[ext_resource type="Texture2D" uid="uid://bw64tifkx4ib2" path="res://assets/assets/others/Background_0.png" id="2_22wdh"]
+[ext_resource type="Texture2D" uid="uid://bljrol57xcq51" path="res://assets/assets/textures/bg/Green.png" id="2_lbdaq"]
+[ext_resource type="FontFile" uid="uid://5emms1oamypy" path="res://assets/assets/fonts/new/HelpMe.woff" id="3_2yuc2"]
+[ext_resource type="FontFile" uid="uid://bdy6j70lswdfa" path="res://assets/assets/fonts/new/HelpMe.ttf" id="4_wpmxx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lnboh"]
+font = ExtResource("3_2yuc2")
+font_size = 27
+font_color = Color(1, 0, 0.0166664, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 1)
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sc46w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2(268, 154)
+texture = ExtResource("2_22wdh")
+
+[node name="BG" parent="." instance=ExtResource("1_npew6")]
+visible = false
+bg_texture = ExtResource("2_lbdaq")
+
+[node name="Title" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -75.0
+offset_right = 107.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DREAMS OF DISARRAY"
+label_settings = SubResource("LabelSettings_lnboh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -20.0
+offset_right = 58.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_wpmxx")
+theme_override_font_sizes/font_size = 18
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = 33.0
+offset_right = 35.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_wpmxx")
+theme_override_font_sizes/font_size = 11
+text = "Quit"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
